@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 
 using namespace std;
 
@@ -12,5 +11,7 @@ int gcd(int a, int b){
     if (a == b)
         return a;
 
-    return __gcd(a,b);
+    if (a > b)
+        return gcd(a-b, b);
+    return gcd(a, b-a);
 }
